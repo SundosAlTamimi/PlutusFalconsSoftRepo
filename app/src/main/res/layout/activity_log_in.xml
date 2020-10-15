@@ -3,7 +3,98 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/darkGray"
     android:layout_height="match_parent"
     tools:context=".LogIn">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/sighn_up_floatingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/darkOrange"
+        android:elevation="5dp"
+        app:rippleColor="@color/darkOrange"
+        android:src="@drawable/ic_account_balance_black_24dp"
+        app:fabSize="mini"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/card"
+        android:layout_width="368dp"
+        android:layout_height="420dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="15dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+    <com.smarteist.autoimageslider.SliderLayout
+        android:id="@+id/imageSlider_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:elevation="5dp"
+
+        >
+
+
+    </com.smarteist.autoimageslider.SliderLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button_logIn"
+        android:layout_width="194dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginTop="132dp"
+        android:textStyle="bold"
+        android:background="@drawable/btn_login"
+        android:text="@string/logIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="328dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="56dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="Plutest App Your Biggest Atm NetWork In Jordan"
+        android:textColor="@color/darkOrange_light"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        android:layout_marginLeft="60dp" />
+
+    <Button
+        android:id="@+id/button_sighnup"
+        android:layout_width="194dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:background="@drawable/btn_sighn_up"
+        android:text="Sigh Up"
+        android:textColor="@color/darkWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_logIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
