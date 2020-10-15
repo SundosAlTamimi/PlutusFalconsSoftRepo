@@ -28,6 +28,7 @@ class AccountsAdapter extends RecyclerView.Adapter<AccountsAdapter.AccountsViewH
 
     @Override
     public void onBindViewHolder(@NonNull AccountsViewHolder holder, int position) {
+        holder.binding(list.get(position));
 
     }
 
