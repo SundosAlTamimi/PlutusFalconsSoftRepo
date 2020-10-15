@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,7 @@ public class WithdrawPage extends AppCompatActivity {
         binding.setClickHandler(onClickHandler);
 
 
+
     }
 
     public class OnClickHandler{
@@ -46,6 +48,10 @@ public class WithdrawPage extends AppCompatActivity {
         }
 
         public void onWhereIGoClicked(View view){
+
+            Intent withDrawIntent=new Intent(WithdrawPage.this,WhereIGo.class);
+            startActivity(withDrawIntent);
+
         }
 
         public void onWithdrawClicked(View view){
