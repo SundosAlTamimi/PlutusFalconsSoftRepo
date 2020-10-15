@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 
 import com.etiennelawlor.discreteslider.library.ui.DiscreteSlider;
@@ -76,6 +78,9 @@ public class WithdrawPage extends AppCompatActivity {
             binding.withdrawLinearTwo.setVisibility(View.VISIBLE);
             binding.withdrawHeader.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_baseline_arrow_back), null, null, null);
             binding.withdrawHeader.setCompoundDrawablePadding(5);
+
+            Animation animation1 = AnimationUtils.loadAnimation(WithdrawPage.this, R.anim.fade_out);
+            binding.withdrawLinearOne.startAnimation(animation1);
         }
 
         public void onBarcodeClicked(View view){
@@ -101,6 +106,9 @@ public class WithdrawPage extends AppCompatActivity {
                 binding.withdrawLinearTwo.setVisibility(View.GONE);
                 binding.withdrawHeader.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_baseline_bubble), null, null, null);
                 binding.withdrawHeader.setCompoundDrawablePadding(5);
+
+                Animation animation1 = AnimationUtils.loadAnimation(WithdrawPage.this, R.anim.fade_in);
+                binding.withdrawLinearTwo.startAnimation(animation1);
 
             }
         }
