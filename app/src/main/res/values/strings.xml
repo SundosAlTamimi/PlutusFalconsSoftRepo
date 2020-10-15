@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">PlutusApp</string>
+    <string name="amount_jd">Amount (JD)</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="confirm">Confirm</string>
+    <string name="how_much_do_you_want">How much do you want?</string>
     <string name="title_activity_login">log in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -18,4 +22,9 @@
     <string name="customerName">Customer Name</string>
     <string name="customerTele">Customer Tele</string>
     <string name="customerage">customerAge</string>
+    <string name="barcode">Barcode</string>
+    <string name="qr_barcode">QR Barcode</string>
+    <string name="amount">Amount</string>
+    <string name="date_and_time">Date and time</string>
+    <string name="valid_for">Valid for</string>
 </resources>

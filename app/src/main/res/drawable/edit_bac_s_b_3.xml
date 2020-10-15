@@ -2,24 +2,27 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
-            <!--<gradient-->
-                <!--android:startColor="#00C9C8C8"-->
-                <!--android:endColor="#39C9C8C8"-->
-                <!--android:angle="270" />-->
+            <gradient
+                android:startColor="#39C9C8C8"
+                android:endColor="#07C9C8C8"
+                android:angle="90" />
             <!--#77FAFAF7-->
             <stroke
                 android:width="0.2dp"
-                android:color="#ffc34d"
+                android:color="#77FAFAF7"
 
                 />
             <!--android:radius="20dp"-->
             <!--android:topLeftRadius="20dp"-->
             <!--android:bottomLeftRadius="20dp"-->
-
+            <!--android:bottomRightRadius="20sp"-->
+            <!--android:topRightRadius="60sp"-->
+            <!--android:topLeftRadius="60dp"-->
             <corners
-            android:topLeftRadius="20dp"
-            android:topRightRadius="20dp"
-             />
+            android:topRightRadius="150dp"
+            android:bottomRightRadius="150dp"
+            android:bottomLeftRadius="150dp"
+                />
             <padding
                 android:left="2dp"
                 android:top="2dp"

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="amount"
+            type="String" />
+
+        <variable
+            name="clickHandler"
+            type="com.falconssoft.plutusapp.WithdrawPage.OnClickHandler" />
+    </data>
+
+    <LinearLayout
+        android:background="@color/darkGray"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".WithdrawPage">
+
+        <TextView
+            android:id="@+id/withdraw_header"
+            android:onClick="@{clickHandler::onWithdrawClicked}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:text="@string/withdraw"
+            android:paddingBottom="20dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/darkOrange"
+            android:textSize="20sp"
+            app:fontFamily="sans-serif-condensed-medium"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_baseline_bubble"
+            android:drawableLeft="@drawable/ic_baseline_bubble" />
+
+        <LinearLayout
+            android:id="@+id/withdraw_linear_one"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:padding="10dp"
+                android:text="@string/how_much_do_you_want"
+                android:textColor="@color/white"
+                android:textColorHint="@color/lightWhite"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:fontFamily="sans-serif-smallcaps" />
+
+            <com.etiennelawlor.discreteslider.library.ui.DiscreteSlider
+                android:id="@+id/withdraw_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".1"
+                app:tickMarkCount="4"
+                app:tickMarkRadius="8dp"
+                app:backdropStrokeWidth="1dp"
+                app:horizontalBarThickness="4dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".3"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.8"
+                    android:text="5"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.9"
+                    android:text="10"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="20"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="50"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/withdraw_amount"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@{amount}"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                app:fontFamily="sans-serif-condensed-medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginVertical="30dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/darkOrange"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:padding="10dp"
+                android:text="From which account?"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:fontFamily="sans-serif-smallcaps"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".8"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/fill_color_background"
+                    android:text="Add Account"
+                    android:paddingTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:drawableTop="@drawable/digital_wallet"
+                    android:layout_marginRight="5dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/withdraw_accounts"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"/>
+
+            <Button
+                android:onClick="@{clickHandler::onConfirmClicked}"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight=".6"
+                android:minWidth="120dp"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:fontFamily="sans-serif-smallcaps"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shadow_background"
+                android:text="@string/confirm"
+                android:textColor="@color/darkOrange"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/withdraw_linear_two"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/shadow_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:onClick="@{clickHandler::onBarcodeClicked}"
+                    android:id="@+id/withdraw_barcode_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/fill_color_background"
+                    android:gravity="center"
+                    android:text="@string/barcode"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:onClick="@{clickHandler::onQRBarcodeClicked}"
+                    android:id="@+id/withdraw_qrbarcode_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/qr_barcode"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:padding="15dp"
+                android:background="@drawable/edit_bac_main_bu"
+                android:layout_marginHorizontal="5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/withdraw_barcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/barcode"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/amount"
+                    android:textColor="@color/lightWhite"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="5dp"
+                    android:text="5 JD"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:textSize="16sp"
+                    android:text="@string/date_and_time"
+                    android:textColor="@color/lightWhite"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="5dp"
+                    android:text="3:45PM ~ 18/10/2020"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:textSize="16sp"
+                    android:text="@string/valid_for"
+                    android:textColor="@color/lightWhite"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="5dp"
+                    android:text="15 min"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <Button
+                android:onClick="@{clickHandler::onWhereIGoClicked}"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:minWidth="150dp"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:layout_weight=".8"
+                android:textAllCaps="false"
+                app:fontFamily="sans-serif-smallcaps"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shadow_background"
+                android:text="Where can i go"
+                android:textColor="@color/darkOrange"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
