@@ -36,22 +36,23 @@ public class SighnUpShop extends FragmentActivity implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        Date currentTimeAndDate = Calendar.getInstance().getTime();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String today = df.format(currentTimeAndDate);
+        PolylineOptions polylineOptions = new PolylineOptions()
         LatLng latLng = new LatLng(31.9695148,35.9140312);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         mMap.addMarker(markerOptions);
         mMap.setMaxZoomPreference(20);
-       mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.0f));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.0f));
+        polylineOptions.add(latLng)
+                            .color(Color.RED)
+                            .width(2);
+                    mMap.addPolyline(polylineOptions);
 //        today = convertToEnglish(today);
 
 //        List<SalesmanStations> stations = new DatabaseHandler(SalesmanMap.this).getAllSalesmanSatation(Login.salesMan, today);
 
 //        Log.e("size " , "" + stations.size());
-        PolylineOptions polylineOptions = new PolylineOptions();
+
 //        for (int i = 0; i < stations.size(); i++) {
 //            for (int j = 0; j < stations.size(); j++) {
 //                if (stations.get(j).getSerial() == i + 1) {

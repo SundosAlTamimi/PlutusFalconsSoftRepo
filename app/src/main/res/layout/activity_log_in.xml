@@ -82,7 +82,7 @@
         android:layout_marginLeft="60dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_sighnup"
         android:layout_width="194dp"
         android:layout_height="53dp"
         android:layout_marginStart="116dp"

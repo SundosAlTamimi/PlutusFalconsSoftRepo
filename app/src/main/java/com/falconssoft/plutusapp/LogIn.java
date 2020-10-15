@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class LogIn extends AppCompatActivity {
 
     SliderLayout sliderLayout;
     FloatingActionButton sighn_up_floatingBtn;
+    Button button_logIn,button_sighnup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,23 @@ public class LogIn extends AppCompatActivity {
             public void onClick(View v) {
                 // go to sighn up page
                 Intent i=new Intent(LogIn.this,SighnUpShop.class);
+                startActivity(i);
+            }
+        });
+        button_logIn=findViewById(R.id.button_logIn);
+        button_sighnup=findViewById(R.id.button_sighnup);
+        button_logIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(LogIn.this,MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        button_sighnup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(LogIn.this,SighnUpCustomer.class);
                 startActivity(i);
             }
         });
