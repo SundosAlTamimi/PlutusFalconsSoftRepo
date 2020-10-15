@@ -2,11 +2,13 @@
 <resources>
     <color name="colorPrimary">#333333</color>
     <color name="colorPrimaryDark">#333333</color>
+
     <color name="colorAccent">#03DAC5</color>
     <color name="peacockBlue">#00A4B4</color>
     <color name="darkGray">#000000</color>
     <color name="darkOrange">#ffc34d</color>//E43C27
-    <color name="darkWhite">#D6CECD</color>
+    <color name="darkOrange_light">#9AFAC55D</color>//E43C27
+    <color name="darkWhite">#E9DFDE</color>
     <color name="lightWhite">#C1D6CECD</color>
 
 </resources>
