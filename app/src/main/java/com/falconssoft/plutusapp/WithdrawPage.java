@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -70,6 +71,7 @@ public class WithdrawPage extends AppCompatActivity {
         binding.withdrawAccounts.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
         binding.withdrawAccounts.setAdapter(adapter);
 
+
     }
 
     public class OnClickHandler implements DiscreteSlider.OnDiscreteSliderChangeListener{
@@ -98,6 +100,10 @@ public class WithdrawPage extends AppCompatActivity {
         }
 
         public void onWhereIGoClicked(View view){
+
+            Intent withDrawIntent=new Intent(WithdrawPage.this,WhereIGo.class);
+            startActivity(withDrawIntent);
+
         }
 
         public void onWithdrawClicked(View view){

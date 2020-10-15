@@ -19,7 +19,7 @@ Button withDrawButton;
         withDrawButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent withDrawIntent=new Intent(MainActivity.this,WhereIGo.class);
+                Intent withDrawIntent=new Intent(MainActivity.this,WithdrawPage.class);
                 startActivity(withDrawIntent);
             }
         });

@@ -13,6 +13,15 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="logIn">Log In</string>
+    <string name="shopName">Shop Name</string>
+    <string name="shopTele">Shop Tele</string>
+    <string name="shopLocation">Shop Location</string>
+    <string name="shopType">Shop Type</string>
+    <string name="SighnUp">Sighn Up</string>
+    <string name="customerName">Customer Name</string>
+    <string name="customerTele">Customer Tele</string>
+    <string name="customerage">customerAge</string>
     <string name="barcode">Barcode</string>
     <string name="qr_barcode">QR Barcode</string>
     <string name="amount">Amount</string>
