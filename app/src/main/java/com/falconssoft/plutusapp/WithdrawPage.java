@@ -76,13 +76,12 @@ public class WithdrawPage extends AppCompatActivity {
 
     public class OnClickHandler implements DiscreteSlider.OnDiscreteSliderChangeListener{
         public void onConfirmClicked(View view){
+            Animation animation1 = AnimationUtils.loadAnimation(WithdrawPage.this, R.anim.fade_in);
             binding.withdrawLinearOne.setVisibility(View.GONE);
             binding.withdrawLinearTwo.setVisibility(View.VISIBLE);
             binding.withdrawHeader.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_baseline_arrow_back), null, null, null);
             binding.withdrawHeader.setCompoundDrawablePadding(5);
-
-            Animation animation1 = AnimationUtils.loadAnimation(WithdrawPage.this, R.anim.fade_out);
-            binding.withdrawLinearOne.startAnimation(animation1);
+            binding.withdrawLinearTwo.startAnimation(animation1);
         }
 
         public void onBarcodeClicked(View view){
@@ -108,13 +107,13 @@ public class WithdrawPage extends AppCompatActivity {
 
         public void onWithdrawClicked(View view){
             if (binding.withdrawLinearTwo.getVisibility() == View.VISIBLE){
+                Animation animation1 = AnimationUtils.loadAnimation(WithdrawPage.this, R.anim.fade_out);
                 binding.withdrawLinearOne.setVisibility(View.VISIBLE);
                 binding.withdrawLinearTwo.setVisibility(View.GONE);
                 binding.withdrawHeader.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_baseline_bubble), null, null, null);
                 binding.withdrawHeader.setCompoundDrawablePadding(5);
 
-                Animation animation1 = AnimationUtils.loadAnimation(WithdrawPage.this, R.anim.fade_in);
-                binding.withdrawLinearTwo.startAnimation(animation1);
+                binding.withdrawLinearOne.startAnimation(animation1);
 
             }
         }
