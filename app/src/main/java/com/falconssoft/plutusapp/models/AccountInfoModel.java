@@ -10,6 +10,14 @@ public class AccountInfoModel extends BaseObservable {
     private String wallet;
     private String walletImage;
 
+    public AccountInfoModel() {
+    }
+
+    public AccountInfoModel(String wallet, String walletImage) {
+        this.wallet = wallet;
+        this.walletImage = walletImage;
+    }
+
     @Bindable
     public String getWallet() {
         return wallet;
