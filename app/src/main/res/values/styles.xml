@@ -7,4 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="seekkbar_style" parent="AppTheme">
+        <item name="seekBarStyle">@color/darkOrange</item>
+    </style>
 </resources>
