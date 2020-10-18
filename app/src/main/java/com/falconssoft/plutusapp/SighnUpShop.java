@@ -1,12 +1,28 @@
 package com.falconssoft.plutusapp;
 
-import android.os.Bundle;
-
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
-public class SighnUpShop extends FragmentActivity{// implements OnMapReadyCallback {
+import android.graphics.Color;
+import android.os.Bundle;
+import android.util.Log;
 
-//    private GoogleMap mMap;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+public class SighnUpShop extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,20 +33,20 @@ public class SighnUpShop extends FragmentActivity{// implements OnMapReadyCallba
 //        mapFragment.getMapAsync(this);
     }
 
-//    @Override
-//    public void onMapReady(GoogleMap googleMap) {
-//        mMap = googleMap;
-//        PolylineOptions polylineOptions = new PolylineOptions();
-//        LatLng latLng = new LatLng(31.9695148,35.9140312);
-//        MarkerOptions markerOptions = new MarkerOptions();
-//        markerOptions.position(latLng);
-//        mMap.addMarker(markerOptions);
-//        mMap.setMaxZoomPreference(20);
-//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.0f));
-//        polylineOptions.add(latLng)
-//                .color(Color.RED)
-//                .width(2);
-//        mMap.addPolyline(polylineOptions);
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        PolylineOptions polylineOptions = new PolylineOptions();
+        LatLng latLng = new LatLng(31.9695148,35.9140312);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        mMap.addMarker(markerOptions);
+        mMap.setMaxZoomPreference(20);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.0f));
+        polylineOptions.add(latLng)
+                            .color(Color.RED)
+                            .width(2);
+                    mMap.addPolyline(polylineOptions);
 //        today = convertToEnglish(today);
 
 //        List<SalesmanStations> stations = new DatabaseHandler(SalesmanMap.this).getAllSalesmanSatation(Login.salesMan, today);
@@ -63,5 +79,5 @@ public class SighnUpShop extends FragmentActivity{// implements OnMapReadyCallba
 //            }
 //        }
 
-//    }
+    }
 }
