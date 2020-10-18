@@ -72,7 +72,7 @@
         android:layout_marginRight="56dp"
         android:fontFamily="serif"
         android:gravity="center"
-        android:text="Plutest App Your Biggest Atm NetWork In Jordan"
+        android:text="Plutus App Your Biggest Atm NetWork In Jordan"
         android:textColor="@color/darkOrange_light"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"

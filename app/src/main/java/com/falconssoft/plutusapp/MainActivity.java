@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-Button withDrawButton;
+Button withDrawButton ,explore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +23,19 @@ Button withDrawButton;
                 startActivity(withDrawIntent);
             }
         });
+        explore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent withDrawIntent=new Intent(MainActivity.this,ExploreActivity.class);
+                startActivity(withDrawIntent);
+            }
+        });
 
     }
 
     private void initial() {
 
         withDrawButton=findViewById(R.id.withDrawButton);
-
+        explore=findViewById(R.id.explore);
     }
 }
