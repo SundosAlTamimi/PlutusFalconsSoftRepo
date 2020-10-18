@@ -10,4 +10,9 @@
     <style name="seekkbar_style" parent="AppTheme">
         <item name="seekBarStyle">@color/darkOrange</item>
     </style>
+    <style name="Theme_Dialog" parent="android:Theme.Holo.Dialog">
+
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
 </resources>

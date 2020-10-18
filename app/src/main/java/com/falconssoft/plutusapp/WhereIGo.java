@@ -22,14 +22,14 @@ RecyclerView whereRecyclerView ;
         whereRecyclerView=findViewById(R.id.whereRecyclerView);
 
         list=new ArrayList<>();
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
+        list.add("حبوب");
+        list.add("القيصر");
+        list.add("Burger Maker");
+        list.add("الوجبه الذهبية");
+        list.add("شاورما الموصلي");
+        list.add("مخابز برادايس");
+        list.add("Gas Station");
+
 
         whereRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         whereICanGoAdapter = new WhereICanGoAdapter(this, list);

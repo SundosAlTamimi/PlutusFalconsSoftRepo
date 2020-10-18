@@ -27,4 +27,6 @@
     <string name="amount">Amount</string>
     <string name="date_and_time">Date and time</string>
     <string name="valid_for">Valid for</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="or_choose_freely">OR choose freely</string>
 </resources>
