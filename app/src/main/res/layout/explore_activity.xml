@@ -78,7 +78,7 @@
                         android:text="Category" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/withdraw_accounts"
+                        android:id="@+id/withdraw_categories"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2" />

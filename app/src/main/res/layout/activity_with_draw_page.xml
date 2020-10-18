@@ -42,7 +42,7 @@
 
         <LinearLayout
             android:id="@+id/withdraw_linear_one"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="9"
@@ -255,7 +255,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:visibility="visible"
+            android:visibility="gone"
             android:id="@+id/withdraw_linear_two"
             android:layout_width="match_parent"
             android:layout_height="0dp"
