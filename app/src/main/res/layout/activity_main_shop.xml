@@ -81,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:layout_weight="0"
                     android:gravity="center"
                     android:text="Welcome User"
                     android:textColor="@color/lightWhite"
@@ -92,15 +93,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:layout_weight="0"
                     android:gravity="center"
-                    android:text="Balance is 1254 JD"
+                    android:text="Your Balance is 1254 JD"
                     android:textColor="@color/lightWhite"
                     android:textSize="20sp"
                     app:fontFamily="serif" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -120,7 +123,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/edit_bac_s"
                             android:fontFamily="serif"
-                            android:text="Send"
+                            android:text="On The Go"
                             android:textAllCaps="true"
                             android:textColor="@color/darkOrange"
                             android:textSize="16sp" />
@@ -132,8 +135,8 @@
                             android:layout_marginHorizontal="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/edit_bac_s_"
-                            android:text="WithDraw"
                             android:fontFamily="serif"
+                            android:text="Worker"
                             android:textColor="@color/darkOrange"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -153,8 +156,8 @@
                             android:layout_marginHorizontal="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/edit_bac_s_b"
-                            android:text="Monitor"
                             android:fontFamily="serif"
+                            android:text="Trans"
                             android:textColor="@color/darkOrange"
                             android:textSize="16sp" />
 
@@ -165,13 +168,25 @@
                             android:layout_marginHorizontal="10dp"
                             android:layout_weight="1"
                             android:background="@drawable/edit_bac_s_b_2"
-                            android:text="Explore"
                             android:fontFamily="serif"
+                            android:text="Settings"
                             android:textColor="@color/darkOrange"
                             android:textSize="16sp" />
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/scanBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/scan_barcode"
+                    android:gravity="center"
+                    android:text="Scan Barcode"
+                    android:textColor="@color/darkGray"
+                    android:textSize="20sp" />
             </LinearLayout>
 
         </LinearLayout>

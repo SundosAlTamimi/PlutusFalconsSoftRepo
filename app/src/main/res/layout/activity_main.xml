@@ -160,13 +160,13 @@
                             android:drawableTop="@drawable/log2"
                             android:paddingVertical="55dp"
                             android:background="@drawable/edit_bac_s_b"
-                            android:text="Monitor"
+                            android:text="Log"
                             android:fontFamily="serif"
                             android:textColor="@color/darkOrange"
                             android:textSize="16sp" />
 
                         <Button
-                            android:id="@+id/button9"
+                            android:id="@+id/explore"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginHorizontal="10dp"
