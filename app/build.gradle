@@ -43,4 +43,10 @@ dependencies {
     implementation 'com.github.lawloretienne:discreteslider:0.0.9'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.github.Chrisvin:RubberPicker:v1.5'
+
+    //barcode and qr
+    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+
 }

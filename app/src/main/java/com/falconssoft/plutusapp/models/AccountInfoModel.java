@@ -9,6 +9,7 @@ public class AccountInfoModel extends BaseObservable {
 
     private String wallet;
     private String walletImage;
+    private String amount;
 
     public AccountInfoModel() {
     }
@@ -16,6 +17,16 @@ public class AccountInfoModel extends BaseObservable {
     public AccountInfoModel(String wallet, String walletImage) {
         this.wallet = wallet;
         this.walletImage = walletImage;
+    }
+
+    @Bindable
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+        notifyPropertyChanged(BR.amount);
     }
 
     @Bindable

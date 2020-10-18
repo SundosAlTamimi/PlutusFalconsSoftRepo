@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context="com.falconssoft.plutusapp.MainActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:background="@drawable/ic_person_black_24dp"
-                     />
+                    />
 
                 <TextView
                     android:id="@+id/textView"
@@ -112,7 +112,7 @@
                         android:gravity="center"
                         android:orientation="horizontal">
 
-                        <Button
+                        <TextView
                             android:id="@+id/button7"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -120,6 +120,9 @@
                             android:layout_weight="1"
                             android:background="@drawable/edit_bac_s"
                             android:fontFamily="serif"
+                            android:drawableTop="@drawable/letter2"
+                            android:paddingVertical="65dp"
+                            android:gravity="center"
                             android:text="Send"
                             android:textAllCaps="true"
                             android:textColor="@color/darkOrange"
@@ -133,6 +136,8 @@
                             android:layout_weight="1"
                             android:background="@drawable/edit_bac_s_"
                             android:text="WithDraw"
+                            android:drawableTop="@drawable/withdraw"
+                            android:paddingVertical="55dp"
                             android:fontFamily="serif"
                             android:textColor="@color/darkOrange"
                             android:textSize="16sp" />
@@ -152,6 +157,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginHorizontal="10dp"
                             android:layout_weight="1"
+                            android:drawableTop="@drawable/log2"
+                            android:paddingVertical="55dp"
                             android:background="@drawable/edit_bac_s_b"
                             android:text="Monitor"
                             android:fontFamily="serif"
@@ -164,6 +171,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginHorizontal="10dp"
                             android:layout_weight="1"
+                            android:drawableTop="@drawable/explore"
+                            android:paddingVertical="55dp"
                             android:background="@drawable/edit_bac_s_b_2"
                             android:text="Explore"
                             android:fontFamily="serif"
