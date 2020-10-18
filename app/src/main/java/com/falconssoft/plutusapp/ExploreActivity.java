@@ -1,12 +1,15 @@
 package com.falconssoft.plutusapp;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.falconssoft.plutusapp.models.AccountInfoModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -15,11 +18,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExploreActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     MapView mapView;
     TextView text1,text2,text3;
+    private CategoryAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +79,18 @@ public class ExploreActivity extends FragmentActivity implements OnMapReadyCallb
 
             }
         });
+
+        List<AccountInfoModel> list = new ArrayList<>();
+        list.add(new AccountInfoModel("Bakery", ""));
+        list.add(new AccountInfoModel("Gas Station", ""));
+        list.add(new AccountInfoModel("Restaurant", ""));
+        list.add(new AccountInfoModel("Hair Salon", ""));
+        list.add(new AccountInfoModel("Car Exhibition", ""));
+
+        recyclerView = findViewById(R.id.withdraw_categories);
+        adapter = new CategoryAdapter(list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
+        recyclerView.setAdapter(adapter);
 
     }
 
