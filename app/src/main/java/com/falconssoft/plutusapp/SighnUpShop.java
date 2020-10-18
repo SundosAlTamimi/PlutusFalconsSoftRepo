@@ -28,15 +28,15 @@ public class SighnUpShop extends FragmentActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sighn_up_shop);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+//                .findFragmentById(R.id.map);
+//        mapFragment.getMapAsync(this);
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        PolylineOptions polylineOptions = new PolylineOptions()
+        PolylineOptions polylineOptions = new PolylineOptions();
         LatLng latLng = new LatLng(31.9695148,35.9140312);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
