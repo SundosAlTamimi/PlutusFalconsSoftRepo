@@ -1,6 +1,7 @@
 package com.falconssoft.plutusapp;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -81,17 +83,39 @@ TextView scanBarcode;
                     Log.e("MainActivity", "" + Result.getContents());
                     Toast.makeText(this, "Scan ___" + Result.getContents(), Toast.LENGTH_SHORT).show();
 
-                    new SweetAlertDialog(MainActivityShop.this, SweetAlertDialog.SUCCESS_TYPE)
-//                            .setTitleText(MainActivityShop.this.getResources().getString(R.string.cheque_app))
-//                            .setContentText(MainActivityShop.this.getResources().getString(R.string.CHEQUE_NOT_FOR_YOU))
-//                            .setConfirmText(MainActivityShop.this.getResources().getString(R.string.ok))
-                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                @SuppressLint("WrongConstant")
-                                @Override
-                                public void onClick(SweetAlertDialog sDialog) {
-                                    sDialog.dismissWithAnimation();
-                                }
-                            }).show();
+//                    new SweetAlertDialog(MainActivityShop.this, SweetAlertDialog.SUCCESS_TYPE)
+//                            .setTitleText("")
+////                            .setContentText(MainActivityShop.this.getResources().getString(R.string.CHEQUE_NOT_FOR_YOU))
+////                            .setConfirmText(MainActivityShop.this.getResources().getString(R.string.ok))
+//                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+//                                @SuppressLint("WrongConstant")
+//                                @Override
+//                                public void onClick(SweetAlertDialog sDialog) {
+//                                    sDialog.dismissWithAnimation();
+//                                }
+//                            }).show();
+
+
+
+                    final Dialog dialog = new Dialog(MainActivityShop.this,R.style.Theme_Dialog);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.yes_dialog);
+                    dialog.setCancelable(false);
+                    dialog.setCanceledOnTouchOutside(true);
+
+                    Button okButton=dialog.findViewById(R.id.okButton);
+
+                    okButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            dialog.dismiss();
+
+                        }
+                    });
+
+                    dialog.show();
+
 
                 }
 

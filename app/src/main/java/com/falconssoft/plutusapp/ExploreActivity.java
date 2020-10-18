@@ -2,7 +2,10 @@ package com.falconssoft.plutusapp;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,6 +19,7 @@ public class ExploreActivity extends FragmentActivity implements OnMapReadyCallb
 
     private GoogleMap mMap;
     MapView mapView;
+    TextView text1,text2,text3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +27,51 @@ public class ExploreActivity extends FragmentActivity implements OnMapReadyCallb
         setContentView(R.layout.explore_activity);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
+        text1=findViewById(R.id.tex1);
+        text2=findViewById(R.id.tex2);
+        text3=findViewById(R.id.tex3);
+
         mapView=findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
+        text1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(ExploreActivity.this,WithdrawPage.class);
+
+                intent.putExtra("Explore","Explore");
+
+                startActivity(intent);
+
+            }
+        });
+        text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(ExploreActivity.this,WithdrawPage.class);
+
+                intent.putExtra("Explore","Explore");
+
+                startActivity(intent);
+
+            }
+        });
+        text3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(ExploreActivity.this,WithdrawPage.class);
+
+                intent.putExtra("Explore","Explore");
+
+                startActivity(intent);
+
+            }
+        });
+
     }
 
 

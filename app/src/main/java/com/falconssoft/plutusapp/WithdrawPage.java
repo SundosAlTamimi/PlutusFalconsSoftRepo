@@ -29,7 +29,6 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.oned.Code128Writer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import com.jem.rubberpicker.RubberSeekBar;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import java.util.ArrayList;
@@ -66,6 +65,17 @@ public class WithdrawPage extends AppCompatActivity {
 
         accountInfoModel.setAmount("5 JD");
 
+        try {
+            String Explore = getIntent().getStringExtra("Explore");
+            if (Explore.equals("Explore")) {
+                binding.whereCanGo.setVisibility(View.GONE);
+            } else {
+                binding.whereCanGo.setVisibility(View.VISIBLE);
+            }
+
+        }catch (Exception e){
+            binding.whereCanGo.setVisibility(View.VISIBLE);
+        }
         List<AccountInfoModel> list = new ArrayList<>();
         list.add(new AccountInfoModel("BOJ", ""));
         list.add(new AccountInfoModel("Arab Bank", ""));
