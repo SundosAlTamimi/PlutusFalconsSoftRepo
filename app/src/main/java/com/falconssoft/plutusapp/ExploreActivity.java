@@ -92,6 +92,12 @@ public class ExploreActivity extends FragmentActivity implements OnMapReadyCallb
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
         recyclerView.setAdapter(adapter);
 
+//        mapView=findViewById(R.id.mapView);
+//        mapView.onCreate(savedInstanceState);
+//        mapView.getMapAsync(this);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
 
@@ -108,9 +114,19 @@ public class ExploreActivity extends FragmentActivity implements OnMapReadyCallb
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(31.9695148,35.9140312);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("FalconS Soft"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        // Add a marker in Sydney and move the camera
+//        LatLng sydney = new LatLng(31.9695148,35.9140312);
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("FalconS Soft"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng latLng = new LatLng(31.9695148,35.9140312);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+//        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.bakery));
+
+        mMap.addMarker(markerOptions);
+//        mMap.setMaxZoomPreference(200);
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        float zoomLevel = 16.0f; //This goes up to 21
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
     }
 }

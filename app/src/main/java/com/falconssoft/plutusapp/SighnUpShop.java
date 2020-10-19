@@ -6,12 +6,15 @@ import androidx.fragment.app.FragmentActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -31,18 +34,47 @@ public class SighnUpShop extends FragmentActivity implements OnMapReadyCallback 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+//        mMapView.getMap().setOnMapClickListener(new GoogleMap.OnMapClickListener()
+//        {
+//            @Override
+//            public void onMapClick(LatLng arg0)
+//            {
+//                android.util.Log.i("onMapClick", "Horray!");
+//            }
+//        });
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+//        googleMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(0, 0))
+//                .title("Marker"));
+
+        mMap = googleMap;
+
         mMap = googleMap;
 //        PolylineOptions polylineOptions = new PolylineOptions();
         LatLng latLng = new LatLng(31.9695148,35.9140312);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
+//        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.bakery));
+
         mMap.addMarker(markerOptions);
-        mMap.setMaxZoomPreference(20);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+//        mMap.setMaxZoomPreference(200);
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        float zoomLevel = 16.0f; //This goes up to 21
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
+//        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+//                                          @Override
+//                                          public boolean onMarkerClick(Marker m) {
+//                                              Log.e("Marker",""+m.getTitle());
+//                                              Toast.makeText(SighnUpShop.this, ""+m.getTitle(), Toast.LENGTH_SHORT).show();
+//                                              return true;
+//
+//
+//                                          }
+//                                      });
 //        polylineOptions.add(latLng)
 //                            .color(Color.RED)
 //                            .width(2);
