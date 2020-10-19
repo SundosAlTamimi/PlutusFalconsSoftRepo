@@ -19,6 +19,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    repositories {
+        google()
+        jcenter()
+        // If you're using a version of Gradle lower than 4.1, you must
+        // instead use:
+        //  maven { url 'https://jitpack.io' }     url 'https://maven.google.com'
+         maven {
+             url 'https://jitpack.io'
+         }
+
+
+    }
 
     dataBinding{
         enabled true
@@ -37,8 +49,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.smarteist:autoimageslider:1.2.0'
     implementation 'com.github.bumptech.glide:glide:4.7.1'
-    implementation 'com.google.android.gms:play-services-maps:15.0.1'
-    implementation 'com.google.android.gms:play-services-location:15.0.1'
+
+
 
     implementation 'com.github.lawloretienne:discreteslider:0.0.9'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
@@ -46,5 +58,9 @@ dependencies {
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     implementation 'com.github.f0ris.sweetalert:library:1.5.6'
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
 }
+//
+//
