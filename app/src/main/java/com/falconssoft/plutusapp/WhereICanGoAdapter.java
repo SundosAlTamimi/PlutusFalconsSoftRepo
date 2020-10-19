@@ -47,6 +47,27 @@ class WhereICanGoAdapter extends RecyclerView.Adapter<WhereICanGoAdapter.WhereIG
 //        holder.chequeNo.setText(list.get(position));
         holder.shopName.setText(list.get(position));
 
+
+        switch (position){
+//            case 0:
+//                break;
+            case 1:
+                holder.imag.setImageDrawable(activity.getResources().getDrawable(R.drawable.alqeser));
+                break;
+            case 2:
+                holder.imag.setImageDrawable(activity.getResources().getDrawable(R.drawable.burger_maker));
+                break;
+            case 3:
+                holder.imag.setImageDrawable(activity.getResources().getDrawable(R.drawable.gold));
+                break;
+            case 4:
+                holder.imag.setImageDrawable(activity.getResources().getDrawable(R.drawable.almosaly));
+                break;
+            case 5:
+                holder.imag.setImageDrawable(activity.getResources().getDrawable(R.drawable.paradise));
+                break;
+        }
+
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,11 +146,13 @@ class WhereICanGoAdapter extends RecyclerView.Adapter<WhereICanGoAdapter.WhereIG
     class WhereIGoViewHolder extends RecyclerView.ViewHolder {
         TextView shopName, accountNo;
         LinearLayout linearLayout;
+        ImageView imag;
 
         public WhereIGoViewHolder(@NonNull View itemView) {
             super(itemView);
 //
             shopName = itemView.findViewById(R.id.shopName);
+            imag= itemView.findViewById(R.id.imag);
 //            accountNo = itemView.findViewById(R.id.owner_raw_accountNo);
 //
             linearLayout= itemView.findViewById(R.id.linearLayout);

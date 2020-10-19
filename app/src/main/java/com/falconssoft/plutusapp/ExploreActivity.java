@@ -24,7 +24,7 @@ import java.util.List;
 public class ExploreActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    MapView mapView;
+//    MapView mapView;
     TextView text1,text2,text3;
     private CategoryAdapter adapter;
     private RecyclerView recyclerView;
@@ -39,9 +39,9 @@ public class ExploreActivity extends FragmentActivity implements OnMapReadyCallb
         text2=findViewById(R.id.tex2);
         text3=findViewById(R.id.tex3);
 
-        mapView=findViewById(R.id.mapView);
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(this);
+//        mapView=findViewById(R.id.mapView);
+//        mapView.onCreate(savedInstanceState);
+//        mapView.getMapAsync(this);
 
         text1.setOnClickListener(new View.OnClickListener() {
             @Override
