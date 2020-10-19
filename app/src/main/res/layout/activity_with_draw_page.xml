@@ -194,39 +194,88 @@
                 android:layout_height="0dp"
                 android:layout_weight=".5"
                 android:padding="5dp"
-                android:text="From which account?"
+                android:text="@string/choose_payment_method"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:fontFamily="sans-serif-smallcaps"
                 />
 
-            <LinearLayout
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="1.6"
                 android:layout_marginHorizontal="10dp"
-                android:orientation="horizontal">
+                android:scrollbars="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight=".8"
-                    android:layout_marginEnd="5dp"
-                    android:background="@drawable/fill_color_background"
-                    android:text="Add Account"
-                    android:paddingTop="20dp"
-                    android:gravity="center_horizontal"
-                    android:drawableTop="@drawable/digital_wallet"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginHorizontal="10dp"
+                    android:orientation="horizontal">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/withdraw_accounts"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"/>
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/gray_fill_color"
+                        >
 
-            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_baseline_check"
+                                android:padding="12dp"
+                                />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:src="@drawable/wallet"
+                                android:padding="10dp"
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Current balance 1254 JD"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:gravity="center_horizontal"
+                             />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_fill_color"
+                        android:text="Add new virtual card"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="@color/white"
+                        android:paddingTop="20dp"
+                        android:textSize="15sp"
+                        android:gravity="center_horizontal"
+                        android:drawableTop="@drawable/ic_baseline_add"
+                        android:layout_marginHorizontal="10dp" />
+
+                    <!--                <androidx.recyclerview.widget.RecyclerView-->
+                    <!--                    android:id="@+id/withdraw_accounts"-->
+                    <!--                    android:layout_width="0dp"-->
+                    <!--                    android:layout_height="match_parent"-->
+                    <!--                    android:layout_weight="2"/>-->
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <View
                 android:layout_width="match_parent"

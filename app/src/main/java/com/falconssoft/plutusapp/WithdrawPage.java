@@ -84,9 +84,9 @@ public class WithdrawPage extends AppCompatActivity {
         list.add(new AccountInfoModel("Cairo Bank", ""));
         list.add(new AccountInfoModel("Housing Bank", ""));
 
-        adapter = new AccountsAdapter(list);
-        binding.withdrawAccounts.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
-        binding.withdrawAccounts.setAdapter(adapter);
+//        adapter = new AccountsAdapter(list);
+//        binding.withdrawAccounts.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
+//        binding.withdrawAccounts.setAdapter(adapter);
 
 
     }
