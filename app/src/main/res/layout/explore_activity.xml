@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkGray"
@@ -68,6 +69,15 @@
 <!--                    android:layout_marginBottom="0dp"-->
 <!--                    -->
 <!--                    />-->
+<!--                    android:layout_marginBottom="0dp"-->
+<!--                    android:visibility="gone"/>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/google_map"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="392dp"
@@ -99,12 +109,42 @@
                         android:text="Category" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/withdraw_accounts"
+                        android:id="@+id/withdraw_categories"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2" />
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tex1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignStart="@+id/tex2"
+                    android:layout_alignTop="@+id/tex2"
+                    android:layout_marginStart="57dp"
+                    android:layout_marginTop="105dp"
+                    android:background="@drawable/location_mark" />
+
+                <TextView
+                    android:id="@+id/tex2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="107dp"
+                    android:layout_marginTop="127dp"
+                    android:background="@drawable/location_mark" />
+
+                <TextView
+                    android:id="@+id/tex3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignStart="@+id/tex1"
+                    android:layout_alignBottom="@+id/tex1"
+                    android:layout_marginStart="89dp"
+                    android:layout_marginBottom="-94dp"
+                    android:background="@drawable/location_mark" />
             </RelativeLayout>
 
         </LinearLayout>

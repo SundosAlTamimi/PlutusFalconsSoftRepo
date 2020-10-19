@@ -66,6 +66,17 @@ public class WithdrawPage extends AppCompatActivity {
 
         accountInfoModel.setAmount("5 JD");
 
+        try {
+            String Explore = getIntent().getStringExtra("Explore");
+            if (Explore.equals("Explore")) {
+                binding.whereCanGo.setVisibility(View.GONE);
+            } else {
+                binding.whereCanGo.setVisibility(View.VISIBLE);
+            }
+
+        }catch (Exception e){
+            binding.whereCanGo.setVisibility(View.VISIBLE);
+        }
         List<AccountInfoModel> list = new ArrayList<>();
         list.add(new AccountInfoModel("BOJ", ""));
         list.add(new AccountInfoModel("Arab Bank", ""));
@@ -74,9 +85,9 @@ public class WithdrawPage extends AppCompatActivity {
         list.add(new AccountInfoModel("Cairo Bank", ""));
         list.add(new AccountInfoModel("Housing Bank", ""));
 
-        adapter = new AccountsAdapter(list);
-        binding.withdrawAccounts.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
-        binding.withdrawAccounts.setAdapter(adapter);
+//        adapter = new AccountsAdapter(list);
+//        binding.withdrawAccounts.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
+//        binding.withdrawAccounts.setAdapter(adapter);
 
 
     }

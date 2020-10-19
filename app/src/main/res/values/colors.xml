@@ -15,4 +15,6 @@
     <color name="lightWhite">#C1D6CECD</color>
     <color name="white">#ffffff</color>
     <color name="NoColor">#02FFFFFF</color>
+    <color name="gray">#494545</color>
+
 </resources>

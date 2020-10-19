@@ -1,9 +1,15 @@
 package com.falconssoft.plutusapp;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
+import com.falconssoft.plutusapp.models.AccountInfoModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -12,16 +18,79 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExploreActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     MapView mapView;
+    TextView text1,text2,text3;
+    private CategoryAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.explore_activity);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
+        text1=findViewById(R.id.tex1);
+        text2=findViewById(R.id.tex2);
+        text3=findViewById(R.id.tex3);
+
+        mapView=findViewById(R.id.mapView);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
+
+        text1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(ExploreActivity.this,WithdrawPage.class);
+
+                intent.putExtra("Explore","Explore");
+
+                startActivity(intent);
+
+            }
+        });
+        text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(ExploreActivity.this,WithdrawPage.class);
+
+                intent.putExtra("Explore","Explore");
+
+                startActivity(intent);
+
+            }
+        });
+        text3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(ExploreActivity.this,WithdrawPage.class);
+
+                intent.putExtra("Explore","Explore");
+
+                startActivity(intent);
+
+            }
+        });
+
+        List<AccountInfoModel> list = new ArrayList<>();
+        list.add(new AccountInfoModel("Bakery", ""));
+        list.add(new AccountInfoModel("Gas Station", ""));
+        list.add(new AccountInfoModel("Restaurant", ""));
+        list.add(new AccountInfoModel("Hair Salon", ""));
+        list.add(new AccountInfoModel("Car Exhibition", ""));
+
+        recyclerView = findViewById(R.id.withdraw_categories);
+        adapter = new CategoryAdapter(list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, true));
+        recyclerView.setAdapter(adapter);
 
 //        mapView=findViewById(R.id.mapView);
 //        mapView.onCreate(savedInstanceState);
